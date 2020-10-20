@@ -1,0 +1,32 @@
+#! /bin/bash
+#Check Three digit number is Palindrome or not,check the thrice three digit number.
+
+for (( i=1; i<4; i++ ))
+do
+num=$((RANDOM%900+100))
+P=0
+echo "$i-Number : " $num
+rev=""
+
+temp=$num
+
+while [ $num -gt 0 ]
+do
+        p=$(( $num % 10 ))
+
+        num=$(( num/10 ))
+
+        rev=$( echo $rev$p )
+done
+
+if [ $temp -eq $rev ]
+        then
+		echo $temp"="$rev
+                echo "Number is Paliindrome"
+        else
+		echo $temp"!="$rev
+                echo "Number is not Palindrom"
+fi
+
+done
+
